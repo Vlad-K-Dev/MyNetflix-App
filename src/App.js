@@ -6,6 +6,7 @@ const App = () => {
       <h1 className="header__title">
         Hello!
       </h1>
+
       <p className="header__text">My Netflix App</p>
     </div>
   )

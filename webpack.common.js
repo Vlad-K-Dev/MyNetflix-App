@@ -10,12 +10,16 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "[name].bundle.js"
+    filename: "[name].[contenthash].bundle.js"
+  },
+  optimization: {
+    runtimeChunk: 'single'
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
+      title:"Caching"
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
@@ -46,4 +50,5 @@ module.exports = {
       },
     ],
   },
+
 }
