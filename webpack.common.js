@@ -13,13 +13,23 @@ module.exports = {
     filename: "[name].[contenthash].bundle.js"
   },
   optimization: {
-    runtimeChunk: 'single'
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
+    splitChunks:  {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        }
+      }
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
-      title:"Caching"
+      title: 'Caching'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
