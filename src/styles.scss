@@ -1,10 +1,25 @@
+$font: 'Texturina', serif;
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-$font: 'Texturina', serif;
+.wrap {
+  font-family: $font;
+  width: 1260px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 
 @import "./styles/header.scss";
+@import "./styles/search.scss";
+@import "./styles/content.scss";
+@import "./styles/footer.scss";
+@import "./styles/filmWidget.scss";
 
