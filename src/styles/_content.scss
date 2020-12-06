@@ -5,4 +5,11 @@
     width: 1135px;
     margin: auto;
   }
+
+  .films__list{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
 }

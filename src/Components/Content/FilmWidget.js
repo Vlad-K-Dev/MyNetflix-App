@@ -1,19 +1,23 @@
 import React from 'react';
-
-const FilmWidget = () => {
+import PropTypes from 'prop-types'
+const FilmWidget = (film) => {
   return (
-    <div className="film">
+    <li className="film" key={film.film.id}>
       <div className="film__prev">
-        <img src="../../img/poster.jpeg" alt="" className="film__image"/>
+        <img src={film.film.poster_path} alt="" className="film__image"/>
       </div>
-      <h3 className="film__title">
-        Title
-      </h3>
-      <p className="film__genre">
-        Comedy
-      </p>
-    </div>
+      <div className="film__description">
+        <h3 className="description__title">
+          {film.film.title}
+        </h3>
+        <p className="description__genre">
+        </p>
+      </div>
+    </li>
   )
+}
+FilmWidget.propTypes = {
+  film: PropTypes.object
 }
 
 export default FilmWidget;

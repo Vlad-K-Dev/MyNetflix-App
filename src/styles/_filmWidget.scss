@@ -6,21 +6,25 @@
   margin: 1rem;
 
   &__prev {
+    display: flex;
+    flex-flow: column;
     width: 240px;
     margin: auto;
-    height: 200px;
+    height: 250px;
   }
 
   &__image {
-    width: 100%;
-    height: auto;
+    margin: .5rem;
+    height: 100%;
   }
+  .film__description{
 
-  &__title {
-    margin: 1rem;
-  }
+    &__title {
+      margin: 1rem;
+    }
 
-  &__genre {
-    margin: 1rem;
+    &__genre {
+      margin: 1rem;
+    }
   }
 }
