@@ -1,6 +1,6 @@
 .film {
   width: 250px;
-  height: 400px;
+  min-height: 400px;
   border-radius: .6rem;
   box-shadow: 0 0 8px #c1c1c1;
   margin: 1rem;
@@ -8,23 +8,26 @@
   &__prev {
     display: flex;
     flex-flow: column;
-    width: 240px;
+    width: 230px;
     margin: auto;
-    height: 250px;
+    height: 300px;
   }
 
   &__image {
     margin: .5rem;
     height: 100%;
   }
-  .film__description{
-
-    &__title {
-      margin: 1rem;
-    }
-
-    &__genre {
-      margin: 1rem;
-    }
+  &__description {
+    width: 230px;
+    margin: 1rem 1rem auto;
   }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__genre {
+    font-size: 12px;
+  }
+
 }

@@ -5,11 +5,10 @@ import ErrorBoundary from "../ErrorBoundary";
 
 const FilmList = () => {
   const [films, setFilms] = useState([])
-  const [error, setError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   useEffect(() => {
-    // const url = "data.json"
-    
-      fetch("./data.json")
+     const url = "https://reactjs-cdp.herokuapp.com/movies"
+      fetch(url)
         .then(res => res.json())
         .then(
           (result) => {
@@ -17,7 +16,7 @@ const FilmList = () => {
           },
         )
         .catch (e => {
-          setError(e);
+          setErrorMessage(e);
           console.log(e)
         })
   }, [])
@@ -25,8 +24,12 @@ const FilmList = () => {
   return (
       <div className="main__films">
         <ul className="films__list">
-          <ErrorBoundary>
-            <FilmWidget films={films}/>
+          <ErrorBoundary error={errorMessage}>
+            {
+              films.map(film => {
+                return  <FilmWidget film={film}/>
+              })
+            }
           </ErrorBoundary>
         </ul>
       </div>
