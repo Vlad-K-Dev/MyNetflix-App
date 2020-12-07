@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="wrap">
       <Header/>
-      <Main/>
+        <Main/>
       <Footer />
     </div>
   )
